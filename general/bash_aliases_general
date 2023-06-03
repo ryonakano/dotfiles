@@ -1,0 +1,6 @@
+# navigation
+alias ..="cd .."
+alias pushcwd="pushd ."
+
+# grep
+alias grepn="grep -nr"

@@ -1,0 +1,15 @@
+# codespell: comma-separated file lists to skip spell check
+CSPELL_IGN_LIST="\
+	*.swp,\
+	*.o\
+"
+# codespell: disable warnings about binary file
+CSPELL_QUIET_LEVEL=2
+
+# codespell
+# - skip listed files
+# - run in the specified quiet level
+spell()
+{
+	codespell -S "$CSPELL_IGN_LIST" -q $CSPELL_QUIET_LEVEL
+}

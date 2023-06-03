@@ -1,0 +1,11 @@
+[core]
+	editor = vim
+[init]
+	defaultBranch = main
+[credential]
+	helper = /usr/local/share/gcm-core/git-credential-manager
+	credentialStore = gpg
+[alias]
+	grepn = "grep -n"
+	fakemerge = "merge --no-ff --no-commit"
+	show-conflicts = "diff --diff-filter=U"

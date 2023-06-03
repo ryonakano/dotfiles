@@ -1,0 +1,9 @@
+" show line number
+set number
+" show filename
+set laststatus=2
+
+call plug#begin()
+Plug 'editorconfig/editorconfig-vim'
+Plug 'arrufat/vala.vim'
+call plug#end()

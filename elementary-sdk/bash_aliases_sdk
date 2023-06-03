@@ -1,0 +1,7 @@
+# Build and install the project as a Flatpak package
+# $1: manifest filename
+fbld()
+{
+	local mani="$1"
+	flatpak-builder builddir-fpk --user --install --force-clean $mani
+}
