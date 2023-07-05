@@ -1,5 +1,10 @@
 .PHONY: all
-all: general git vim codespell flatpak chrome elementary-sdk virtualbox
+# Make sure to put additional targets between extra-pre and extra-post
+all: extra-pre general git vim codespell flatpak chrome elementary-sdk virtualbox extra-post
+
+.PHONY: extra-pre
+extra-pre:
+	@cd extra && ./configure_extra.sh extra-pre.tar.gz
 
 .PHONY: general
 general:
@@ -32,3 +37,7 @@ elementary-sdk:
 .PHONY: virtualbox
 virtualbox:
 	@cd virtualbox && ./install_virtualbox.sh
+
+.PHONY: extra-post
+extra-post:
+	@cd extra && ./configure_extra.sh extra-post.tar.gz
