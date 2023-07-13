@@ -9,3 +9,4 @@
 	grepn = "grep -n"
 	fakemerge = "merge --no-ff --no-commit"
 	show-conflicts = "diff --diff-filter=U"
+	diffstag = "diff --staged"
