@@ -18,7 +18,7 @@ GIT_PROMPT_SRC=https://raw.github.com/git/git/main/contrib/completion/$GIT_PROMP
 GIT_PROMPT_DEST=$GIT_CONFIG_DIR/$GIT_PROMPT
 
 # git-credential-manager
-GCM_VER=2.1.2
+GCM_VER=2.2.2
 GCM_URL=https://github.com/GitCredentialManager/git-credential-manager/releases/download/v$GCM_VER/gcm-linux_amd64.$GCM_VER.tar.gz
 GCM_DEST=/usr/local/share/gcm-core
 
