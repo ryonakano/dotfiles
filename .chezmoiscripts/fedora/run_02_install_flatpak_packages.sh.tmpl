@@ -2,9 +2,9 @@
 
 {{ if eq .chezmoi.osRelease.id "fedora" }}
 
-CWD={{ joinPath .chezmoi.sourceDir "config" "fedora" | quote }}
+CONFIG_DIR={{ joinPath .chezmoi.sourceDir "config" .chezmoi.osRelease.id | quote }}
 
-FILES=$(find $CWD -name "*.flatpakconf" | sort)
+FILES=$(find $CONFIG_DIR -name "*.flatpakconf" | sort)
 for f in ${FILES[@]}; do
 	source $f
 	flatpak remote-add --if-not-exists --user $REMOTE_NAME $REMOTE_URL

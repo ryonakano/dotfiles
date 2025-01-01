@@ -2,8 +2,8 @@
 
 {{ if eq .chezmoi.osRelease.id "fedora" }}
 
-CWD={{ joinPath .chezmoi.sourceDir "config" "fedora" | quote }}
+CONFIG_DIR={{ joinPath .chezmoi.sourceDir "config" .chezmoi.osRelease.id | quote }}
 
-sed '/^#/d' < $(find $CWD -name "*.dnfpkglist" | sort) | sudo xargs dnf install -y
+sed '/^#/d' < $(find $CONFIG_DIR -name "*.dnfpkglist" | sort) | sudo xargs dnf install -y
 
 {{ end }}
