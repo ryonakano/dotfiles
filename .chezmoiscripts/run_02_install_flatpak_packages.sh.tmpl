@@ -1,7 +1,5 @@
 #!/bin/bash
 
-{{ if eq .chezmoi.osRelease.id "fedora" }}
-
 CONFIG_DIR={{ joinPath .chezmoi.sourceDir "config" .chezmoi.osRelease.id | quote }}
 
 FILES=$(find $CONFIG_DIR -name "*.flatpakconf" | sort)
@@ -10,5 +8,3 @@ for f in ${FILES[@]}; do
 	flatpak remote-add --if-not-exists --user $REMOTE_NAME $REMOTE_URL
 	flatpak install -y --user $REMOTE_NAME $INSTALL_ID
 done
-
-{{ end }}

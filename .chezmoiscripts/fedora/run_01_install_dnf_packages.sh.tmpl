@@ -1,9 +1,0 @@
-#!/bin/bash
-
-{{ if eq .chezmoi.osRelease.id "fedora" }}
-
-CONFIG_DIR={{ joinPath .chezmoi.sourceDir "config" .chezmoi.osRelease.id | quote }}
-
-sed '/^#/d' < $(find $CONFIG_DIR -name "*.dnfpkglist" | sort) | sudo xargs dnf install -y
-
-{{ end }}
