@@ -3,4 +3,4 @@
 CONFIG_DIR={{ joinPath .chezmoi.sourceDir "config" .chezmoi.osRelease.id | quote }}
 
 sudo pkcon refresh
-sed '/^#/d' < $(find $CONFIG_DIR -name "*.pkglist" | sort) | sudo xargs pkcon install -y --allow-reinstall
+find $CONFIG_DIR -name "*.pkglist" | sort | xargs sed '/^#/d' | sudo xargs pkcon install -y --allow-reinstall
