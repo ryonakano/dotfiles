@@ -1,0 +1,10 @@
+#!/bin/bash
+# dconf.ini hash: {{ joinPath .chezmoi.sourceDir "config" "fedora" "dconf.ini" | include | sha256sum }}
+
+{{ if eq .chezmoi.osRelease.id "fedora" }}
+
+CWD={{ joinPath .chezmoi.sourceDir "config" "fedora" | quote }}
+
+dconf load / < $CWD/dconf.ini
+
+{{ end }}

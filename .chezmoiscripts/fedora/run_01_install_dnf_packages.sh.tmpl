@@ -2,7 +2,7 @@
 
 {{ if eq .chezmoi.osRelease.id "fedora" }}
 
-CWD={{ joinPath .chezmoi.sourceDir "chezmoi.d" "fedora" | quote }}
+CWD={{ joinPath .chezmoi.sourceDir "config" "fedora" | quote }}
 
 sed '/^#/d' < $(find $CWD -name "*.dnfpkglist" | sort) | sudo xargs dnf install -y
 
