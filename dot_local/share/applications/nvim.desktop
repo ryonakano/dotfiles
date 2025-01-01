@@ -1,0 +1,5 @@
+# We use neovim from the terminal, so override the desktop file to hide its entry from the launcher.
+[Desktop Entry]
+Name=Neovim
+Type=Application
+NoDisplay=true
