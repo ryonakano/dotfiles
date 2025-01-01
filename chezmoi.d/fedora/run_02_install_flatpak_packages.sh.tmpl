@@ -2,7 +2,7 @@
 
 {{ if eq .chezmoi.osRelease.id "fedora" }}
 
-CWD=$(cd $(dirname $0); echo $PWD)
+CWD={{ joinPath .chezmoi.sourceDir "chezmoi.d" "fedora" | quote }}
 
 FILES=$(find $CWD -name "*.flatpakconf" | sort)
 for f in ${FILES[@]}; do
