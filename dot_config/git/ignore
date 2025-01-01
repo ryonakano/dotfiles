@@ -1,0 +1,6 @@
+*.swp
+*.o
+*.d
+!*.d/
+.flatpak-builder
+builddir-fpk

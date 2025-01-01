@@ -1,0 +1,12 @@
+# List of package names of dnf. Lines beginning with '#' is ignored.
+curl
+google-chrome-stable
+virt-manager
+zsh
+git
+git-credential-libsecret
+neovim
+vala
+meson
+vala-language-server
+nodejs

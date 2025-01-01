@@ -1,0 +1,19 @@
+[core]
+	editor = nvim
+[init]
+	defaultBranch = main
+[credential]
+	helper = /usr/libexec/git-core/git-credential-libsecret
+[alias]
+	grepn = "grep -n"
+	fakemerge = "merge --no-ff --no-commit"
+	show-conflicts = "diff --diff-filter=U"
+	diffstag = "diff --staged"
+[pager]
+	log = diff-highlight | less
+	show = diff-highlight | less
+	diff = diff-highlight | less
+[merge]
+	ff = false
+[pull]
+	ff = only

@@ -1,0 +1,14 @@
+#!/bin/bash
+
+{{ if eq .chezmoi.osRelease.id "fedora" }}
+
+CWD=$(cd $(dirname $0); echo $PWD)
+
+FILES=$(find $CWD -name "*.flatpakconf" | sort)
+for f in ${FILES[@]}; do
+	source $f
+	flatpak remote-add --if-not-exists --user $REMOTE_NAME $REMOTE_URL
+	flatpak install -y --user $REMOTE_NAME $INSTALL_ID
+done
+
+{{ end }}

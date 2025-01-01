@@ -1,0 +1,10 @@
+#!/bin/bash
+# dconf.ini hash: {{ include "dconf.ini" | sha256sum }}
+
+{{ if eq .chezmoi.osRelease.id "fedora" }}
+
+CWD=$(cd $(dirname $0); echo $PWD)
+
+dconf load / < $CWD/dconf.ini
+
+{{ end }}
