@@ -1,4 +1,4 @@
-# List of package names of dnf. Lines beginning with '#' is ignored.
+# List of package names of dnf. Strings following with '#', '#' itself, and blank lines are ignored.
 curl
 google-chrome-stable
 virt-manager

@@ -4,6 +4,6 @@
 
 CONFIG_DIR={{ joinPath .chezmoi.sourceDir "config" .chezmoi.osRelease.id | quote }}
 
-find $CONFIG_DIR -name "*.dnfpkglist" | sort | xargs sed '/^#/d' | sudo xargs dnf install -y
+find $CONFIG_DIR -name "*.dnfpkglist" | sort | xargs sed -e 's/#.*$//g' -e '/^$/d' | sudo xargs dnf install -y
 
 {{ end }}
