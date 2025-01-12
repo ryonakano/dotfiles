@@ -4,19 +4,12 @@
 ## Supported Distributions
 - Fedora 41
 
-## Install
-You'll need to [install chezmoi](https://www.chezmoi.io/install/) first.
+## Installation
+You'll need `make` for easier installation of dotfiles.
+Then install chezmoi and install dotfiles with:
 
-Fetch dotfiles from the remote repository:
-
-```bash
-chezmoi init https://github.com/ryonakano/dotfiles.git
 ```
-
-Then install dotfiles with:
-
-```bash
-chezmoi apply
+make all
 ```
 
 Reboot after installation.
