@@ -1,13 +1,13 @@
 # List of package names that can be installed using dnf.
 # Strings following with '#', '#' itself, and blank lines are ignored.
 curl
-google-chrome-stable
-virt-manager
-zsh
 git
 git-credential-libsecret
-neovim
-vala
+google-chrome-stable
 meson
-vala-language-server
+neovim
 nodejs
+vala
+vala-language-server
+virt-manager
+zsh
