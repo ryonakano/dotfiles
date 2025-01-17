@@ -18,7 +18,12 @@ jobs:
       options: --privileged
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Install dependencies
+        run: |
+          dnf -y install make git
+
+      - name: Checkout
+        uses: actions/checkout@v4
 
       - name: Install QEMU
         if: ${{ matrix.arch != 'x86_64' }}
@@ -33,6 +38,4 @@ jobs:
 
       - name: Install dotfiles
         run: |
-          dnf -y install make git
-          git --version
           make
