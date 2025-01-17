@@ -2,9 +2,13 @@
 
 CONFIG_DIR={{ joinPath .chezmoi.sourceDir "config" .chezmoi.osRelease.id | quote }}
 
-FILES=$(find $CONFIG_DIR -name "*.flatpakconf" | sort)
-for f in ${FILES[@]}; do
+for f in "$CONFIG_DIR/*.flatpakconf"; do
 	source $f
+
 	flatpak remote-add --if-not-exists --user $REMOTE_NAME $REMOTE_URL
 	flatpak install -y --user $REMOTE_NAME $INSTALL_ID
+
+	unset REMOTE_NAME
+	unset REMOTE_URL
+	unset INSTALL_ID
 done

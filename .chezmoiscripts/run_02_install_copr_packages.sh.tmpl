@@ -1,0 +1,17 @@
+#!/bin/bash
+
+{{ if eq .chezmoi.osRelease.id "fedora" }}
+
+CONFIG_DIR={{ joinPath .chezmoi.sourceDir "config" .chezmoi.osRelease.id | quote }}
+
+for file in "$CONFIG_DIR/*.coprconf"; do
+	source $file
+
+	sudo dnf copr enable -y $PROJECT_SPEC
+	sudo dnf install -y $PACKAGES
+
+	unset PROJECT_SPEC
+	unset PACKAGES
+done
+
+{{ end }}

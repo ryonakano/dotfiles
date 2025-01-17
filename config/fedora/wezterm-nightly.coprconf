@@ -1,0 +1,7 @@
+# Copr project ID to enable. See "man dnf-copr" for the format.
+PROJECT_SPEC="wezfurlong/wezterm-nightly"
+
+# List of package names that can be installed using dnf.
+DNF_PACKAGES="
+	wezterm
+"
