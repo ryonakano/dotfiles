@@ -15,12 +15,11 @@ jobs:
 
     container:
       image: fedora:41
-      options: --privileged
 
     steps:
       - name: Install dependencies
         run: |
-          dnf -y install make git
+          sudo dnf -y install make git
 
       - name: Checkout
         uses: actions/checkout@v4
@@ -28,7 +27,7 @@ jobs:
       - name: Install QEMU
         if: ${{ matrix.arch != 'x86_64' }}
         run: |
-          dnf -y install docker
+          sudo dnf -y install docker
 
       - name: Set up QEMU for aarch64 emulation
         if: ${{ matrix.arch != 'x86_64' }}
