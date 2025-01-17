@@ -1,0 +1,7 @@
+# baseurl of the repository.
+REPO_BASEURL="https://dl.google.com/linux/chrome/rpm/stable/x86_64"
+
+# List of package names that can be installed using dnf.
+DNF_PACKAGES="
+	google-chrome-stable
+"

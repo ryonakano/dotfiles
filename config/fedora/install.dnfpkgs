@@ -3,7 +3,6 @@
 curl
 git
 git-credential-libsecret
-google-chrome-stable
 meson
 neovim
 nodejs
