@@ -34,4 +34,6 @@ jobs:
       - name: Install dotfiles
         run: |
           dnf -y install make git
+          echo $SHELL
+          git status
           make

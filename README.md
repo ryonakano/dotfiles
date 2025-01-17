@@ -6,6 +6,7 @@
 
 ## Installation
 You'll need `git` and `make` commands installed on your system for easier installation of dotfiles.
+
 Then install chezmoi and install dotfiles with:
 
 ```
