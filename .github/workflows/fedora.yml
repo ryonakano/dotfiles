@@ -1,0 +1,35 @@
+name: CI
+
+on: pull_request
+
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        arch: [x86_64, aarch64]
+      # Don't fail the whole workflow if one architecture fails
+      fail-fast: false
+
+    container:
+    image: fedora:41
+      options: --privileged
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install QEMU
+        if: ${{ matrix.arch != 'x86_64' }}
+        run: |
+          dnf -y install docker
+
+      - name: Set up QEMU for aarch64 emulation
+        if: ${{ matrix.arch != 'x86_64' }}
+        uses: docker/setup-qemu-action@v3
+        with:
+          platforms: arm64
+
+      - name: Install dotfiles
+        run: make
