@@ -33,6 +33,6 @@ jobs:
 
       - name: Install dotfiles
         run: |
+          git --version
           dnf -y install make git
-          ls -la
           make
