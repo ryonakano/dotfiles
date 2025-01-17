@@ -32,4 +32,6 @@ jobs:
           platforms: arm64
 
       - name: Install dotfiles
-        run: make
+        run: |
+          dnf -y install make
+          make
