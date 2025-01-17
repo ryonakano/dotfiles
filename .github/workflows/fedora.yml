@@ -33,5 +33,5 @@ jobs:
 
       - name: Install dotfiles
         run: |
-          dnf -y install make
+          dnf -y install make git
           make
