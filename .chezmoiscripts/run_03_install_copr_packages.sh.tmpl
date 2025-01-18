@@ -1,8 +1,6 @@
 #!/bin/bash
 
-{{ if eq .chezmoi.osRelease.id "fedora" }}
-
-CONFIG_DIR={{ joinPath .chezmoi.sourceDir "config" .chezmoi.osRelease.id | quote }}
+CONFIG_DIR={{ joinPath .chezmoi.sourceDir "config" | quote }}
 
 for file in "$CONFIG_DIR/*.coprconf"; do
 	source $file
@@ -13,5 +11,3 @@ for file in "$CONFIG_DIR/*.coprconf"; do
 	unset PROJECT_SPEC
 	unset DNF_PACKAGES
 done
-
-{{ end }}

@@ -1,8 +1,6 @@
 #!/bin/bash
 
-{{ if eq .chezmoi.osRelease.id "fedora" }}
-
-CONFIG_DIR={{ joinPath .chezmoi.sourceDir "config" .chezmoi.osRelease.id | quote }}
+CONFIG_DIR={{ joinPath .chezmoi.sourceDir "config" | quote }}
 
 for file in "$CONFIG_DIR/*.dnfrepo"; do
 	source $file
@@ -13,5 +11,3 @@ for file in "$CONFIG_DIR/*.dnfrepo"; do
 	unset REPO_URL
 	unset DNF_PACKAGES
 done
-
-{{ end }}

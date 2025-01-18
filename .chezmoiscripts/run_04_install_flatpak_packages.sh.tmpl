@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CONFIG_DIR={{ joinPath .chezmoi.sourceDir "config" .chezmoi.osRelease.id | quote }}
+CONFIG_DIR={{ joinPath .chezmoi.sourceDir "config" | quote }}
 
 for f in "$CONFIG_DIR/*.flatpakconf"; do
 	source $f
