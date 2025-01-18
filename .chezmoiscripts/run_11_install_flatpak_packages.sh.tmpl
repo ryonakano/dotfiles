@@ -1,9 +1,10 @@
 #!/bin/bash
 
-CONFIG_DIR={{ joinPath .chezmoi.sourceDir "config" | quote }}
+CONFIG_DIR_ROOT={{ joinPath .chezmoi.sourceDir "config" | quote }}
+CONFIG_DIR_FLATPAK="$CONFIG_DIR_ROOT/flatpak"
 
-for f in "$CONFIG_DIR/*.flatpakconf"; do
-	source $f
+for file in "$CONFIG_DIR_FLATPAK/*.flatpakconf"; do
+	source $file
 
 	flatpak remote-add --if-not-exists --user $REMOTE_NAME $REMOTE_URL
 	flatpak install -y --user $REMOTE_NAME $INSTALL_ID

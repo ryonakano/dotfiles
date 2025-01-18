@@ -1,7 +1,7 @@
 # Remote name
-REMOTE_NAME=flathub
+REMOTE_NAME="flathub"
 # Remoto URL
-REMOTE_URL=https://flathub.org/repo/flathub.flatpakrepo
+REMOTE_URL="https://flathub.org/repo/flathub.flatpakrepo"
 
 # List of apps to install from this remote
 INSTALL_ID="

@@ -1,0 +1,7 @@
+#!/bin/bash
+# dconf.ini hash: {{ joinPath .chezmoi.sourceDir "config" "dconf.ini" | include | sha256sum }}
+
+CONFIG_DIR_ROOT={{ joinPath .chezmoi.sourceDir "config" | quote }}
+CONFIG_DIR_DCONF="$CONFIG_DIR_ROOT/dconf"
+
+dconf load / < "$CONFIG_DIR_DCONF/*.ini"

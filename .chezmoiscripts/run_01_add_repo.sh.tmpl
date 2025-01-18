@@ -1,0 +1,12 @@
+#!/bin/bash
+
+CONFIG_DIR_ROOT={{ joinPath .chezmoi.sourceDir "config" | quote }}
+CONFIG_DIR_DNFREPO="$CONFIG_DIR_ROOT/repo"
+
+for file in "$CONFIG_DIR_DNFREPO/*.repo"; do
+	source $file
+
+	sudo dnf config-manager addrepo -y --add-or-replace --set=baseurl=$REPO_BASEURL
+
+	unset REPO_URL
+done

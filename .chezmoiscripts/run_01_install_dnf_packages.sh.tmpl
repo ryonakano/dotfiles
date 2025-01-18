@@ -1,5 +1,0 @@
-#!/bin/bash
-
-CONFIG_DIR={{ joinPath .chezmoi.sourceDir "config" | quote }}
-
-find $CONFIG_DIR -name "*.dnfpkgs" | sort | xargs sed -e 's/#.*$//g' -e '/^$/d' | sudo xargs dnf install -y

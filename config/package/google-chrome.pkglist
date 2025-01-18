@@ -1,0 +1,3 @@
+# List of package names that can be installed using dnf.
+# Strings following with '#', '#' itself, and blank lines are ignored.
+google-chrome-stable
