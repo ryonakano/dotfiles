@@ -3,20 +3,20 @@ local vim = vim
 --[[----------------------------------------------------------------------------
 Load plugins
 ----------------------------------------------------------------------------]]--
-local Plug = vim.fn['plug#']
-vim.call('plug#begin')
+local Plug = vim.fn["plug#"]
+vim.call("plug#begin")
 -- dependencies
-Plug('nvim-tree/nvim-web-devicons')
-Plug('nvim-lua/plenary.nvim')
-Plug('MunifTanjim/nui.nvim')
+Plug("nvim-tree/nvim-web-devicons")
+Plug("nvim-lua/plenary.nvim")
+Plug("MunifTanjim/nui.nvim")
 
 -- plugins
-Plug('nvim-neo-tree/neo-tree.nvim')
-Plug('neoclide/coc.nvim', { ['branch'] = 'release'})
-Plug('akinsho/bufferline.nvim', { ['tag'] = '*' })
-Plug('nvim-lualine/lualine.nvim')
-Plug('nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate'})
-vim.call('plug#end')
+Plug("nvim-neo-tree/neo-tree.nvim")
+Plug("neoclide/coc.nvim", { ["branch"] = "release"})
+Plug("akinsho/bufferline.nvim", { ["tag"] = "*" })
+Plug("nvim-lualine/lualine.nvim")
+Plug("nvim-treesitter/nvim-treesitter", { ["do"] = ":TSUpdate"})
+vim.call("plug#end")
 
 --[[----------------------------------------------------------------------------
 Setup neo-tree
@@ -48,20 +48,20 @@ require("bufferline").setup {
 --[[----------------------------------------------------------------------------
 Setup lualine
 ----------------------------------------------------------------------------]]--
-require('lualine').setup {
+require("lualine").setup {
   options = {
-    theme = 'OceanicNext',
+    theme = "OceanicNext",
   },
 }
 
 --[[----------------------------------------------------------------------------
 Setup nvim-treesitter
 ----------------------------------------------------------------------------]]--
-require('nvim-treesitter.configs').setup {
+require("nvim-treesitter.configs").setup {
   ensure_installed = {
-    'blueprint',
-    'vala',
-    'lua',
+    "blueprint",
+    "vala",
+    "lua",
   },
   highlight = {
     enable = true,

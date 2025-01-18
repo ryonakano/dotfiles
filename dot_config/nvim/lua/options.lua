@@ -1,13 +1,13 @@
 local options = {
   number = true,
   termguicolors = true, -- enable 24-bit color
-  mouse = '',
+  mouse = "",
   list = true,
   listchars = {
-    tab = '>-',
-    space = '.',
+    tab = ">-",
+    space = ".",
   },
-  colorcolumn = '120',
+  colorcolumn = "120",
 }
 
 for k, v in pairs(options) do
