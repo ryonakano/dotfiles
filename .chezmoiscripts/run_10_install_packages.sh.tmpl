@@ -3,4 +3,4 @@
 CONFIG_DIR_ROOT={{ joinPath .chezmoi.sourceDir "config" | quote }}
 CONFIG_DIR_PACKAGE="$CONFIG_DIR_ROOT/package"
 
-xargs sed -e 's/#.*$//g' -e '/^$/d' < "$CONFIG_DIR_PACKAGE/*.pkglist" | sudo xargs dnf install -y
+find $CONFIG_DIR_PACKAGE -name "*.pkglist" | sort | xargs sed -e 's/#.*$//g' -e '/^$/d' | sudo xargs dnf install -y

@@ -4,4 +4,6 @@
 CONFIG_DIR_ROOT={{ joinPath .chezmoi.sourceDir "config" | quote }}
 CONFIG_DIR_DCONF="$CONFIG_DIR_ROOT/dconf"
 
-dconf load / < "$CONFIG_DIR_DCONF/*.ini"
+for file in "$CONFIG_DIR_DCONF/*.ini"; do
+	dconf load / < $file
+done
