@@ -8,10 +8,10 @@ for file in "$CONFIG_DIR/*.coprconf"; do
 	source $file
 
 	sudo dnf copr enable -y $PROJECT_SPEC
-	sudo dnf install -y $PACKAGES
+	sudo dnf install -y $DNF_PACKAGES
 
 	unset PROJECT_SPEC
-	unset PACKAGES
+	unset DNF_PACKAGES
 done
 
 {{ end }}

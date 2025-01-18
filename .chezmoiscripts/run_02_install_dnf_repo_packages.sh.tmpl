@@ -8,10 +8,10 @@ for file in "$CONFIG_DIR/*.dnfrepo"; do
 	source $file
 
 	sudo dnf config-manager addrepo -y --add-or-replace --set=baseurl=$REPO_BASEURL
-	sudo dnf install -y $PACKAGES
+	sudo dnf install -y $DNF_PACKAGES
 
 	unset REPO_URL
-	unset PACKAGES
+	unset DNF_PACKAGES
 done
 
 {{ end }}
