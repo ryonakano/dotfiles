@@ -1,28 +1,62 @@
 local vim = vim
-local Plug = vim.fn['plug#']
 
+--[[----------------------------------------------------------------------------
+Load plugins
+----------------------------------------------------------------------------]]--
+local Plug = vim.fn['plug#']
 vim.call('plug#begin')
-Plug('editorconfig/editorconfig-vim')
+-- dependencies
 Plug('nvim-tree/nvim-web-devicons')
-Plug('nvim-tree/nvim-tree.lua')
+Plug('nvim-lua/plenary.nvim')
+Plug('MunifTanjim/nui.nvim')
+
+-- plugins
+Plug('nvim-neo-tree/neo-tree.nvim')
 Plug('neoclide/coc.nvim', { ['branch'] = 'release'})
+Plug('akinsho/bufferline.nvim', { ['tag'] = '*' })
 Plug('nvim-lualine/lualine.nvim')
 Plug('nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate'})
 vim.call('plug#end')
 
--- disable netrw at the very start of your init.lua
+--[[----------------------------------------------------------------------------
+Setup neo-tree
+----------------------------------------------------------------------------]]--
+-- Disable netrw in favor of neo-tree
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
--- empty setup using defaults
-require("nvim-tree").setup()
-
-require('lualine').setup {
-  options = {
-    theme = 'OceanicNext'
-  }
+require("neo-tree").setup {
+  filesystem = {
+    filtered_items = {
+      -- Show hidden files
+      visible = true,
+      hide_dotfiles = false,
+      hide_gitignored = true,
+    },
+  },
 }
 
+--[[----------------------------------------------------------------------------
+Setup bufferline
+----------------------------------------------------------------------------]]--
+require("bufferline").setup {
+  options = {
+    diagnostics = "coc",
+  },
+}
+
+--[[----------------------------------------------------------------------------
+Setup lualine
+----------------------------------------------------------------------------]]--
+require('lualine').setup {
+  options = {
+    theme = 'OceanicNext',
+  },
+}
+
+--[[----------------------------------------------------------------------------
+Setup nvim-treesitter
+----------------------------------------------------------------------------]]--
 require('nvim-treesitter.configs').setup {
   ensure_installed = {
     'blueprint',
