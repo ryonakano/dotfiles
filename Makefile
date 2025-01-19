@@ -1,9 +1,21 @@
 CHEZMOI_DIR = ~/bin
 CHEZMOI = $(CHEZMOI_DIR)/chezmoi
 
-.PHONY: all
-all: install_chezmoi init apply
+################################################################################
+# Main targets
+################################################################################
+# Run first-time setup
+.PHONY: install
+install: install_chezmoi init apply
 
+# Fetch and apply changes in the remote repository
+.PHONY: update
+update:
+	$(CHEZMOI) update -v
+
+################################################################################
+# Sub targets
+################################################################################
 # Install chezmoi https://www.chezmoi.io/install/#one-line-package-install
 .PHONY: install_chezmoi
 install_chezmoi:
