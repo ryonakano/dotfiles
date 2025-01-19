@@ -1,14 +1,14 @@
 local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 
---[[----------------------------------------------------------------------------
-General
-----------------------------------------------------------------------------]]--
+--------------------------------------------------------------------------------
+-- General
+--------------------------------------------------------------------------------
 config.use_ime = true
 
---[[----------------------------------------------------------------------------
-Appearance
-----------------------------------------------------------------------------]]--
+--------------------------------------------------------------------------------
+-- Appearance
+--------------------------------------------------------------------------------
 -- c.f. List of color schemes: https://wezfurlong.org/wezterm/colorschemes/index.html
 config.color_scheme = "Monokai (dark) (terminal.sexy)"
 
@@ -24,10 +24,10 @@ config.window_background_opacity = 0.85
 config.initial_cols = 140
 config.initial_rows = 40
 
---[[----------------------------------------------------------------------------
-Tab customization
-Many thanks to https://zenn.dev/mozumasu/articles/mozumasu-wezterm-customization
-----------------------------------------------------------------------------]]--
+--------------------------------------------------------------------------------
+-- Tab customization
+-- Many thanks to https://zenn.dev/mozumasu/articles/mozumasu-wezterm-customization
+--------------------------------------------------------------------------------
 -- Remove unnecessary GUI widget for tab management in favor of hotkeys
 config.show_new_tab_button_in_tab_bar = false
 config.show_close_tab_button_in_tabs = false
