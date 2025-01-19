@@ -1,9 +1,9 @@
-["bin/antigen.zsh"]
+[".local/bin/antigen.zsh"]
 type = "file"
 url = "https://git.io/antigen"
 refreshPeriod = "168h"
 
-["bin/git-prompt.sh"]
+[".local/bin/git-prompt.sh"]
 type = "file"
 url = "https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh"
 refreshPeriod = "168h"

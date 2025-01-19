@@ -1,4 +1,4 @@
-CHEZMOI_DIR = ~/bin
+CHEZMOI_DIR = ~/.local/bin
 CHEZMOI = $(CHEZMOI_DIR)/chezmoi
 
 ################################################################################

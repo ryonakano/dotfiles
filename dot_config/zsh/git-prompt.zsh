@@ -1,4 +1,4 @@
-GIT_PROMPT=$HOME/bin/git-prompt.sh
+GIT_PROMPT=$HOME/.local/bin/git-prompt.sh
 if [ -f $GIT_PROMPT ]; then
 	source $GIT_PROMPT
 	GIT_PS1_SHOWDIRTYSTATE=true
