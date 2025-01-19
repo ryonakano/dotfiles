@@ -1,8 +1,3 @@
-# Load antigen
-source $HOME/.local/bin/antigen.zsh
+PATH="${PATH}:$HOME/.local/bin/sheldon/"
 
-antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle zsh-users/zsh-autosuggestions
-antigen bundle zsh-users/zsh-completions
-
-antigen apply
+eval "$(sheldon source)"
