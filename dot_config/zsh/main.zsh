@@ -13,3 +13,6 @@ bindkey -e
 setopt auto_cd
 setopt auto_pushd
 setopt pushd_ignore_dups
+
+# User-installed binaries
+PATH="${PATH}:$HOME/.local/bin/"
