@@ -11,7 +11,7 @@ install: install_chezmoi init apply
 # Fetch and apply changes in the remote repository
 .PHONY: update
 update:
-	$(CHEZMOI) update -v
+	$(CHEZMOI) update
 
 ################################################################################
 # Sub targets
