@@ -1,0 +1,12 @@
+#!/bin/bash
+
+CONFIG_DIR_ROOT={{ joinPath .chezmoi.sourceDir "config" | quote }}
+CONFIG_DIR_COPR="$CONFIG_DIR_ROOT/copr"
+
+for file in "$CONFIG_DIR_COPR/*.coprconf"; do
+	source $file
+
+	sudo dnf copr enable -y $PROJECT_SPEC
+
+	unset PROJECT_SPEC
+done

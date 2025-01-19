@@ -1,0 +1,13 @@
+# List of package names that can be installed using dnf.
+# Strings following with '#', '#' itself, and blank lines are ignored.
+curl
+flatpak
+git
+git-credential-libsecret
+meson
+neovim
+nodejs
+vala
+vala-language-server
+virt-manager
+zsh
