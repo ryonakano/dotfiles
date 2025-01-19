@@ -27,4 +27,4 @@ init:
 
 .PHONY: apply
 apply:
-	$(CHEZMOI) apply -v
+	$(CHEZMOI) apply
