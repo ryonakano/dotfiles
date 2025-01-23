@@ -5,8 +5,8 @@ vim.g.mapleader = " "
 --------------------------------------------------------------------------------
 -- Buffer navigation
 --------------------------------------------------------------------------------
-map("n", "<C-n>", ":bnext<CR>")
-map("n", "<C-p>", ":bprev<CR>")
-map("n", "<C-a>", ":bfirst<CR>")
-map("n", "<C-e>", ":blast<CR>")
-map("n", "<C-q>", ":bd<CR>")
+map("n", "<Leader>n", ":bnext<CR>")
+map("n", "<Leader>p", ":bprev<CR>")
+map("n", "<Leader>a", ":bfirst<CR>")
+map("n", "<Leader>e", ":blast<CR>")
+map("n", "<Leader>q", ":bd<CR>")
