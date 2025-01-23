@@ -5,10 +5,14 @@
 - Fedora 41
 
 ## Usage
-You'll need `git` and `make` commands installed on your system for easier installation of dotfiles.
+You'll need the following commands to install the dotfiles.
+
+- curl
+- git
+- make
 
 ## First-time setup
-You can install chezmoi and install dotfiles with:
+You can install chezmoi and install the dotfiles with:
 
 ```
 make install
