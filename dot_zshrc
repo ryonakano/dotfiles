@@ -8,7 +8,7 @@ compinit
 # End of lines added by compinstall
 
 # User specific aliases and functions
-ZSH_D=$HOME/.config/zsh
+ZSH_D=$HOME/.config/zsh/zsh.d
 if [ -d $ZSH_D ]; then
 	for rc in $ZSH_D/*; do
 		if [[ ${rc##*/} = *.zsh ]]; then
