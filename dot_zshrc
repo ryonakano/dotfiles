@@ -17,3 +17,4 @@ if [ -d $ZSH_D ]; then
 	done
 	unset rc
 fi
+unset ZSH_D
