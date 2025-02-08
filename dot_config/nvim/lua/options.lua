@@ -8,6 +8,7 @@ local options = {
     space = ".",
   },
   colorcolumn = "120",
+  wildmode = "list:longest", -- shell-like completion
 }
 
 for k, v in pairs(options) do
