@@ -15,4 +15,4 @@ for k, v in pairs(options) do
   vim.opt[k] = v
 end
 
-vim.cmd("colorscheme habamax")
+vim.cmd("colorscheme nightfox")

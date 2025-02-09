@@ -16,6 +16,7 @@ Plug("neoclide/coc.nvim", { ["branch"] = "release"})
 Plug("akinsho/bufferline.nvim", { ["tag"] = "*" })
 Plug("nvim-lualine/lualine.nvim")
 Plug("nvim-treesitter/nvim-treesitter", { ["do"] = ":TSUpdate"})
+Plug("EdenEast/nightfox.nvim")
 vim.call("plug#end")
 
 --------------------------------------------------------------------------------
