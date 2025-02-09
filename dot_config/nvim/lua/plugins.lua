@@ -1,4 +1,5 @@
 local vim = vim
+local map = vim.keymap.set
 
 --------------------------------------------------------------------------------
 -- Load plugins
@@ -53,6 +54,10 @@ require("bufferline").setup {
     },
   },
 }
+
+map("n", "<Tab>", ":bnext<CR>")
+map("n", "<S-Tab>", ":bprev<CR>")
+map("n", "<Leader>w", ":bd<CR>")
 
 --------------------------------------------------------------------------------
 -- Setup lualine
