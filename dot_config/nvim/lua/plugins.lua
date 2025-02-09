@@ -13,7 +13,6 @@ Plug("MunifTanjim/nui.nvim")
 
 -- plugins
 Plug("nvim-neo-tree/neo-tree.nvim")
-Plug("neoclide/coc.nvim", { ["branch"] = "release"})
 Plug("akinsho/bufferline.nvim", { ["tag"] = "*" })
 Plug("nvim-lualine/lualine.nvim")
 Plug("nvim-treesitter/nvim-treesitter", { ["do"] = ":TSUpdate"})
@@ -43,7 +42,6 @@ require("neo-tree").setup {
 --------------------------------------------------------------------------------
 require("bufferline").setup {
   options = {
-    diagnostics = "coc",
     offsets = {
       {
         filetype = "neo-tree",
