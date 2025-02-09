@@ -24,7 +24,7 @@ vim.g.mapleader = " "
 --------------------------------------------------------------------------------
 -- Configure Terminal
 --------------------------------------------------------------------------------
-map("n", "<Leader>t", "<cmd>belowright new<CR><cmd>terminal<CR>")
+map("n", "<Leader>t", ":belowright new<CR>:terminal<CR>")
 map("t", [[<C-\>]], [[<C-\><C-n>]])
 
 -- Make it possible to start typing soon when the terminal opens
