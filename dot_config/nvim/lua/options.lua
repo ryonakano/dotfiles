@@ -12,6 +12,7 @@ local options = {
   },
   colorcolumn = "120",
   wildmode = "list:longest", -- shell-like completion
+  clipboard = "unnamedplus", -- yank to the system clipboard
 }
 
 for k, v in pairs(options) do
