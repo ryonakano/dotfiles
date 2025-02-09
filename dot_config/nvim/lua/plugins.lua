@@ -43,6 +43,14 @@ require("neo-tree").setup {
 require("bufferline").setup {
   options = {
     diagnostics = "coc",
+    offsets = {
+      {
+        filetype = "neo-tree",
+        text = "󰥨 File Explorer",
+        text_align = "left",
+        separator = true,
+      }
+    },
   },
 }
 
