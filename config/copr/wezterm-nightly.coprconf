@@ -1,2 +1,0 @@
-# Copr project ID to enable. See "man dnf-copr" for the format.
-PROJECT_SPEC="wezfurlong/wezterm-nightly"

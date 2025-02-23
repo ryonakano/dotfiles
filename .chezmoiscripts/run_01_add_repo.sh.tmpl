@@ -1,12 +1,9 @@
 #!/bin/bash
 
-CONFIG_DIR_ROOT={{ joinPath .chezmoi.sourceDir "config" | quote }}
-CONFIG_DIR_DNFREPO="$CONFIG_DIR_ROOT/repo"
+REPO_BASEURL="
+	https://dl.google.com/linux/chrome/rpm/stable/x86_64
+"
 
-for file in "$CONFIG_DIR_DNFREPO/*.repo"; do
-	source $file
-
-	sudo dnf config-manager addrepo -y --add-or-replace --set=baseurl=$REPO_BASEURL
-
-	unset REPO_URL
+for url in $REPO_BASEURL; do
+	sudo dnf config-manager addrepo -y --add-or-replace --set=baseurl=$url
 done
