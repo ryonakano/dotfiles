@@ -1,12 +1,10 @@
 #!/bin/bash
 
-CONFIG_DIR_ROOT={{ joinPath .chezmoi.sourceDir "config" | quote }}
-CONFIG_DIR_COPR="$CONFIG_DIR_ROOT/copr"
+# Copr project ID to enable. See "man dnf-copr" for the format.
+PROJECT_SPEC="
+	wezfurlong/wezterm-nightly
+"
 
-for file in "$CONFIG_DIR_COPR/*.coprconf"; do
-	source $file
-
-	sudo dnf copr enable -y $PROJECT_SPEC
-
-	unset PROJECT_SPEC
+for project in $PROJECT_SPEC; do
+	sudo dnf copr enable -y $project
 done

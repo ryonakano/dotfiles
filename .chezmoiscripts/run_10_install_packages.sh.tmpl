@@ -1,6 +1,21 @@
 #!/bin/bash
 
-CONFIG_DIR_ROOT={{ joinPath .chezmoi.sourceDir "config" | quote }}
-CONFIG_DIR_PACKAGE="$CONFIG_DIR_ROOT/package"
+PKGS_DNF="
+	curl
+	flatpak
+	git
+	git-credential-libsecret
+	google-chrome-stable
+	meson
+	neovim
+	nodejs
+	vala
+	vala-language-server
+	virt-manager
+	wezterm
+	zsh
+"
 
-find $CONFIG_DIR_PACKAGE -name "*.pkglist" | sort | xargs sed -e 's/#.*$//g' -e '/^$/d' | sudo xargs dnf install -y
+if [ "$PKGS_DNF" ]; then
+	sudo dnf install -y $PKGS_DNF
+fi
