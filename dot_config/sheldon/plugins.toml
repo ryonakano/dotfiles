@@ -10,18 +10,9 @@
 #
 # See the documentation for more https://github.com/rossmacarthur/sheldon#readme
 
-shell = "zsh"
+shell = "bash"
 
 [plugins]
-
-[plugins.zsh-syntax-highlighting]
-github = "zsh-users/zsh-syntax-highlighting"
-
-[plugins.zsh-autosuggestions]
-github = "zsh-users/zsh-autosuggestions"
-
-[plugins.zsh-completions]
-github = "zsh-users/zsh-completions"
 
 # For example:
 #

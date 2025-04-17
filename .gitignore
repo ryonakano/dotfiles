@@ -1,4 +1,1 @@
 # .gitignore of dotfiles repository itself
-
-# zsh scripts compiled by zcompile
-*.zwc
