@@ -11,6 +11,7 @@ INSTALL_ID="
 	it.mijorus.smile
 	net.poedit.Poedit
 	org.gimp.GIMP
+	org.gnome.Decibels
 	org.gnome.Fractal
 	org.gnome.dspy
 	org.inkscape.Inkscape
