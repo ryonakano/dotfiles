@@ -1,5 +1,4 @@
 local map = vim.keymap.set
-local autocmd = vim.api.nvim_create_autocmd
 
 local options = {
   number = true,
@@ -26,22 +25,3 @@ map({"n", "i"}, "<F1>", "<Nop>")
 -- Toggle relative number. Originally from https://cohama.hateblo.jp/entry/2013/10/07/020453
 -- C-U to remove all characters between the cursor position and the beginning of the line; see ":help c-CTRL-U"
 map("n", "<F3>", ":<C-u>setlocal relativenumber!<CR>")
-
---------------------------------------------------------------------------------
--- Configure Terminal
---------------------------------------------------------------------------------
-map("n", "<Leader>t", ":belowright new<CR>:terminal<CR>")
-map("t", [[<C-\>]], [[<C-\><C-n>]])
-
--- Make it possible to start typing soon when the terminal opens
-autocmd({ "TermOpen" }, {
-  command = "startinsert",
-})
--- Line numbers are not suitable for terminals
-autocmd({ "TermOpen" }, {
-  command = "setlocal nonumber",
-})
-
-autocmd({ "TermOpen" }, {
-  command = "resize 10",
-})
