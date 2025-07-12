@@ -1,9 +1,0 @@
-#!/bin/bash
-
-REPO_BASEURL="
-	https://dl.google.com/linux/chrome/rpm/stable/x86_64
-"
-
-for url in $REPO_BASEURL; do
-	sudo dnf config-manager addrepo -y --add-or-replace --set=baseurl=$url
-done

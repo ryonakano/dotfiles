@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# Copr project ID to enable. See "man dnf-copr" for the format.
+WEZTERM_PROJECT_SPEC="wezfurlong/wezterm-nightly"
+
+sudo dnf copr enable -y $WEZTERM_PROJECT_SPEC
+sudo dnf install -y wezterm

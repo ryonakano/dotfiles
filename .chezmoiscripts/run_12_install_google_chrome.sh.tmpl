@@ -1,0 +1,6 @@
+#!/bin/bash
+
+CHROME_BASEURL=https://dl.google.com/linux/chrome/rpm/stable/x86_64
+
+sudo dnf config-manager addrepo -y --add-or-replace --set=baseurl=$CHROME_BASEURL
+sudo dnf install -y google-chrome-stable
