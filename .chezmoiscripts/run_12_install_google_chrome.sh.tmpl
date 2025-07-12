@@ -2,6 +2,7 @@
 
 {{ if ne .chezmoi.arch "amd64" }}
 # Google Chrome is only available on amd64 platforms
+echo -e "\033[0;33mW: Google Chrome does not support your architecture \"{{ .chezmoi.arch }}\", skipping installation…\033[0;39m"
 exit 0
 {{ end }}
 
