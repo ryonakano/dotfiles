@@ -1,5 +1,10 @@
 #!/bin/bash
 
+{{ if ne .chezmoi.arch "amd64" }}
+# Google Chrome is only available on amd64 platforms
+exit 0
+{{ end }}
+
 CHROME_BASEURL=https://dl.google.com/linux/chrome/rpm/stable/x86_64
 
 sudo dnf config-manager addrepo -y --add-or-replace --set=baseurl=$CHROME_BASEURL
