@@ -1,7 +1,7 @@
 #!/bin/bash
 
-ARCH={{ .chezmoi.arch }}
-if [ "$ARCH" -ne "amd64" ]; then
+ARCH="{{ .chezmoi.arch }}"
+if [ "$ARCH" != "amd64" ]; then
 	# Google Chrome is only available on amd64 platforms
 	echo -e "\033[0;33mW: Google Chrome does not support your architecture \"$ARCH\", skipping installation…\033[0;39m"
 	exit 0

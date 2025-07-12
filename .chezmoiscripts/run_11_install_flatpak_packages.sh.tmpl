@@ -3,7 +3,7 @@
 CONFIG_DIR_ROOT={{ joinPath .chezmoi.sourceDir "config" | quote }}
 CONFIG_DIR_FLATPAK="$CONFIG_DIR_ROOT/flatpak"
 
-ARCH={{ .chezmoi.arch }}
+ARCH="{{ .chezmoi.arch }}"
 CONFIG_FILES="$CONFIG_DIR_FLATPAK/*-$ARCH.flatpakconf"
 
 for file in "$CONFIG_FILES"; do
