@@ -3,6 +3,9 @@
 CONFIG_DIR_ROOT={{ joinPath .chezmoi.sourceDir "config" | quote }}
 CONFIG_DIR_DCONF="$CONFIG_DIR_ROOT/dconf"
 
-for file in "$CONFIG_DIR_DCONF/*.ini"; do
-	dconf load / < $file
-done
+MACHINE="guest"
+if [[ "$HOSTNAME" =~ ^.*-host$ ]]; then
+	MACHINE="host"
+fi
+
+dconf load / < "$CONFIG_DIR_DCONF/$MACHINE.ini"

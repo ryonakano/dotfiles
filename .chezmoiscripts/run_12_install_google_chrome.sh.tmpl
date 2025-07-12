@@ -7,6 +7,11 @@ if [ "$ARCH" != "amd64" ]; then
 	exit 0
 fi
 
+if [[ ! "$HOSTNAME" =~ ^.*-host$ ]]; then
+	# I don't use web browsers on guest machines but use ones on host machines instead
+	exit 0
+fi
+
 CHROME_BASEURL=https://dl.google.com/linux/chrome/rpm/stable/x86_64
 
 sudo dnf config-manager addrepo -y --add-or-replace --set=baseurl=$CHROME_BASEURL

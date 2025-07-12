@@ -2,7 +2,6 @@
 
 PKGS_DNF="
 	curl
-	flatpak
 	git
 	git-credential-libsecret
 	ibus-skk
@@ -12,8 +11,14 @@ PKGS_DNF="
 	tmux
 	vala
 	vala-language-server
-	virt-manager
 "
+
+if [[ "$HOSTNAME" =~ ^.*-host$ ]]; then
+	PKGS_DNF="$PKGS_DNF
+		flatpak
+		virt-manager
+	"
+fi
 
 if [ "$PKGS_DNF" ]; then
 	sudo dnf install -y $PKGS_DNF

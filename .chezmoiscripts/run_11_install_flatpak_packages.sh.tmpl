@@ -1,9 +1,15 @@
 #!/bin/bash
 
+if [[ ! "$HOSTNAME" =~ ^.*-host$ ]]; then
+	# I don't need any additional Flatpak apps on guest machines for now
+	exit 0
+fi
+
 CONFIG_DIR_ROOT={{ joinPath .chezmoi.sourceDir "config" | quote }}
 CONFIG_DIR_FLATPAK="$CONFIG_DIR_ROOT/flatpak"
 
 ARCH="{{ .chezmoi.arch }}"
+
 CONFIG_FILES="$CONFIG_DIR_FLATPAK/*-$ARCH.flatpakconf"
 
 for file in "$CONFIG_FILES"; do
