@@ -3,6 +3,7 @@
 
 ## Supported Distributions
 - Fedora 41
+- elementary OS 8
 
 ## Usage
 You'll need the following commands to install the dotfiles.

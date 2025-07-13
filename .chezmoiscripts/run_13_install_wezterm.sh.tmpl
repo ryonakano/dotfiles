@@ -1,7 +1,39 @@
 #!/bin/bash
 
-# Copr project ID to enable. See "man dnf-copr" for the format.
-WEZTERM_PROJECT_SPEC="wezfurlong/wezterm-nightly"
+install_with_dnf()
+{
+	# Copr project ID to enable. See "man dnf-copr" for the format.
+	local -r WEZTERM_PROJECT_SPEC="wezfurlong/wezterm-nightly"
 
-sudo dnf copr enable -y $WEZTERM_PROJECT_SPEC
-sudo dnf install -y wezterm
+	sudo dnf copr enable -y $WEZTERM_PROJECT_SPEC
+	sudo dnf install -y wezterm
+}
+
+install_with_apt()
+{
+	local -r LIBEXEC_DIR={{ joinPath .chezmoi.sourceDir "libexec" | quote }}
+
+	local -r WEZTERM_KEY_URL=https://apt.fury.io/wez/gpg.key
+	local -r WEZTERM_KEY_FILE=wezterm-fury.gpg
+	local -r WEZTERM_DEB_URL=https://apt.fury.io/wez/
+	# This file seems to be overwritten while installation.
+	# Changing this filename to anything else will cause apt errors, so keep it as it is.
+	local -r WEZTERM_LIST_FILE=wezterm.list
+
+	source "$LIBEXEC_DIR/00_common.sh"
+
+	import_apt_key $WEZTERM_KEY_URL $WEZTERM_KEY_FILE $WEZTERM_LIST_FILE $WEZTERM_DEB_URL '*' '*'
+	sudo apt install -y wezterm-nightly
+}
+
+which dnf > /dev/null
+if [ $? -eq 0 ]; then
+	install_with_dnf
+	exit 0
+fi
+
+which apt > /dev/null
+if [ $? -eq 0 ]; then
+	install_with_apt
+	exit 0
+fi

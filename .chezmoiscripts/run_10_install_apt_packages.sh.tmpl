@@ -1,0 +1,32 @@
+#!/bin/bash
+
+which apt > /dev/null
+if [ $? -ne 0 ]; then
+	exit 0
+fi
+
+# Common packages
+PKGS_APT="
+	curl
+	ibus-skk
+	neovim
+	tmux
+"
+# Git packages
+PKGS_APT="$PKGS_APT make gcc libsecret-1-dev"
+# Development packages
+PKGS_APT="$PKGS_APT meson nodejs valac vala-language-server"
+# Needed for ble.sh
+PKGS_APT="$PKGS_APT gawk"
+
+if [[ "$HOSTNAME" =~ ^.*-host$ ]]; then
+	# Host tools
+	PKGS_APT="$PKGS_APT
+		flatpak
+		virt-manager
+	"
+fi
+
+if [ "$PKGS_APT" ]; then
+	sudo apt install -y $PKGS_APT
+fi

@@ -8,4 +8,11 @@ if [[ "$HOSTNAME" =~ ^.*-host$ ]]; then
 	MACHINE="host"
 fi
 
-dconf load / < "$CONFIG_DIR_DCONF/$MACHINE.ini"
+DISTRO_ID="{{ .chezmoi.osRelease.id }}"
+DCONF_FILE="$CONFIG_DIR_DCONF/$DISTRO_ID-$MACHINE.ini"
+
+if [ ! -f "$DCONF_FILE" ]; then
+	echo -e "\033[0;33mW: DConf file \"$DCONF_FILE\" not found, skipping installation…\033[0;39m"
+fi
+
+dconf load / < "$DCONF_FILE"

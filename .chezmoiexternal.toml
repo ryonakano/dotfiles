@@ -23,3 +23,11 @@ refreshPeriod = "168h"
 type = "file"
 url = "https://github.com/ryanoasis/nerd-fonts/raw/refs/heads/master/patched-fonts/DroidSansMono/DroidSansMNerdFont-Regular.otf"
 refreshPeriod = "168h"
+
+# Required for WezTerm
+[".local/share/fonts"]
+type = "archive"
+url = "https://github.com/adobe-fonts/source-code-pro/releases/download/2.042R-u%2F1.062R-i%2F1.026R-vf/OTF-source-code-pro-2.042R-u_1.062R-i.zip"
+refreshPeriod = "168h"
+stripComponents = 1
+include = ["OTF/*.otf"]

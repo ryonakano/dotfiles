@@ -1,0 +1,18 @@
+# Remote name
+REMOTE_NAME="flathub"
+# Remoto URL
+REMOTE_URL="https://flathub.org/repo/flathub.flatpakrepo"
+
+# List of apps to install from this remote
+INSTALL_ID="
+	com.discordapp.Discord
+	com.slack.Slack
+	it.mijorus.smile
+	net.poedit.Poedit
+	org.gimp.GIMP
+	org.gnome.Decibels
+	org.gnome.Fractal
+	org.gnome.dspy
+	org.inkscape.Inkscape
+	org.musescore.MuseScore
+"

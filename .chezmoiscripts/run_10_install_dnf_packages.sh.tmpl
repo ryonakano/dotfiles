@@ -1,0 +1,30 @@
+#!/bin/bash
+
+which dnf > /dev/null
+if [ $? -ne 0 ]; then
+	exit 0
+fi
+
+# Common packages
+PKGS_DNF="
+	curl
+	ibus-skk
+	neovim
+	tmux
+"
+# Git packages
+PKGS_DNF="$PKGS_DNF git git-credential-libsecret"
+# Development packages
+PKGS_DNF="$PKGS_DNF meson nodejs vala vala-language-server"
+
+if [[ "$HOSTNAME" =~ ^.*-host$ ]]; then
+	# Host tools
+	PKGS_DNF="$PKGS_DNF
+		flatpak
+		virt-manager
+	"
+fi
+
+if [ "$PKGS_DNF" ]; then
+	sudo dnf install -y $PKGS_DNF
+fi

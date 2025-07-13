@@ -12,7 +12,39 @@ if [[ ! "$HOSTNAME" =~ ^.*-host$ ]]; then
 	exit 0
 fi
 
-CHROME_BASEURL=https://dl.google.com/linux/chrome/rpm/stable/x86_64
+install_with_dnf()
+{
+	local -r CHROME_BASEURL=https://dl.google.com/linux/chrome/rpm/stable/x86_64
 
-sudo dnf config-manager addrepo -y --add-or-replace --set=baseurl=$CHROME_BASEURL
-sudo dnf install -y google-chrome-stable
+	sudo dnf config-manager addrepo -y --add-or-replace --set=baseurl=$CHROME_BASEURL
+	sudo dnf install -y google-chrome-stable
+}
+
+install_with_apt()
+{
+	local -r LIBEXEC_DIR={{ joinPath .chezmoi.sourceDir "libexec" | quote }}
+
+	local -r CHROME_KEY_URL=https://dl-ssl.google.com/linux/linux_signing_key.pub
+	local -r CHROME_KEY_FILE=google.gpg
+	local -r CHROME_DEB_URL=http://dl.google.com/linux/chrome/deb/
+	# This file seems to be overwritten while installation.
+	# Changing this filename to anything else will cause apt errors, so keep it as it is.
+	local -r CHROME_LIST_FILE=google-chrome.list
+
+	source "$LIBEXEC_DIR/00_common.sh"
+
+	import_apt_key $CHROME_KEY_URL $CHROME_KEY_FILE $CHROME_LIST_FILE $CHROME_DEB_URL stable main
+	sudo apt install -y google-chrome-stable
+}
+
+which dnf > /dev/null
+if [ $? -eq 0 ]; then
+	install_with_dnf
+	exit 0
+fi
+
+which apt > /dev/null
+if [ $? -eq 0 ]; then
+	install_with_apt
+	exit 0
+fi
