@@ -30,8 +30,7 @@ vim.g.loaded_netrwPlugin = 1
 require("neo-tree").setup {
   filesystem = {
     filtered_items = {
-      -- Show hidden files
-      visible = true,
+      visible = false,
       hide_dotfiles = false,
       hide_gitignored = true,
     },
