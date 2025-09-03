@@ -18,6 +18,7 @@ Plug("akinsho/bufferline.nvim", { ["tag"] = "*" })
 Plug("nvim-lualine/lualine.nvim")
 Plug("nvim-treesitter/nvim-treesitter", { ["do"] = ":TSUpdate"})
 Plug("EdenEast/nightfox.nvim")
+Plug("lewis6991/gitsigns.nvim")
 vim.call("plug#end")
 
 --------------------------------------------------------------------------------
@@ -87,3 +88,8 @@ require("nvim-treesitter.configs").setup {
 -- Setup nightfox
 --------------------------------------------------------------------------------
 vim.cmd("colorscheme nightfox")
+
+--------------------------------------------------------------------------------
+-- Setup gitsigns
+--------------------------------------------------------------------------------
+require("gitsigns").setup()
