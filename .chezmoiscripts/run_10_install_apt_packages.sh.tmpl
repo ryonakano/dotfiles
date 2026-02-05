@@ -17,8 +17,6 @@ PKGS_APT="
 PKGS_APT="$PKGS_APT make gcc libsecret-1-dev"
 # Development packages
 PKGS_APT="$PKGS_APT meson nodejs valac vala-language-server"
-# Needed for ble.sh
-PKGS_APT="$PKGS_APT gawk"
 
 if [[ "$HOSTNAME" =~ ^.*-host$ ]]; then
 	# Host tools

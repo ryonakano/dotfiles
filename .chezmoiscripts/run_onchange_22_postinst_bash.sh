@@ -15,13 +15,3 @@ fi
 # Install sheldon
 curl --proto '=https' -fLsS https://rossmacarthur.github.io/install/crate.sh \
 	| bash -s -- --repo rossmacarthur/sheldon --to ~/.local/bin
-
-# Install ble.sh
-BLE_GIT_DIR="$DATA_HOME/blesh/src/ble.sh"
-rm -rf "$BLE_GIT_DIR"
-mkdir -p $BLE_GIT_DIR
-
-pushd $BLE_GIT_DIR
-git clone --recursive --depth 1 --shallow-submodules https://github.com/akinomyoga/ble.sh.git
-make -C ble.sh install PREFIX=~/.local
-popd # BLE_GIT_DIR
