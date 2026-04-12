@@ -13,4 +13,4 @@ if [ $? -ne 0 ]; then
 fi
 
 # Install sheldon
-cargo install sheldon
+cargo binstall sheldon
