@@ -1,7 +1,7 @@
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias grep='grep --color=auto'
-alias grepn='grep -nr'
+alias grepn='grep -nrI'
 
 alias l='ls -CF'
 alias la='ls -AF'
