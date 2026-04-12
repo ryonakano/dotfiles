@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# Install npm (Node.js) that CocInstall requres
 NVM_VERSION=v0.40.4
 NODEJS_VERSION=24		# Latest LTS
 

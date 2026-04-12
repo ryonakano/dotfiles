@@ -44,6 +44,14 @@ require("neo-tree").setup {
 map("n", "<Leader>e", ":Neotree toggle<CR>")
 
 --------------------------------------------------------------------------------
+-- Setup coc.nvim
+--------------------------------------------------------------------------------
+-- Install missing coc extentions on startup
+vim.g.coc_global_extensions = {
+  "coc-rust-analyzer",
+}
+
+--------------------------------------------------------------------------------
 -- Setup bufferline
 --------------------------------------------------------------------------------
 require("bufferline").setup {
