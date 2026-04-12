@@ -19,6 +19,9 @@ Plug("nvim-lualine/lualine.nvim")
 Plug("nvim-treesitter/nvim-treesitter", { ["branch"] = "master", ["do"] = ":TSUpdate"})
 Plug("EdenEast/nightfox.nvim")
 Plug("lewis6991/gitsigns.nvim")
+
+-- plugins per language
+Plug("rust-lang/rust.vim")
 vim.call("plug#end")
 
 --------------------------------------------------------------------------------
@@ -39,6 +42,14 @@ require("neo-tree").setup {
 }
 
 map("n", "<Leader>e", ":Neotree toggle<CR>")
+
+--------------------------------------------------------------------------------
+-- Setup coc.nvim
+--------------------------------------------------------------------------------
+-- Install missing coc extentions on startup
+vim.g.coc_global_extensions = {
+  "coc-rust-analyzer",
+}
 
 --------------------------------------------------------------------------------
 -- Setup bufferline
