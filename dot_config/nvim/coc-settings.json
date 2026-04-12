@@ -3,6 +3,8 @@
         "vala": {
             "command": "vala-language-server",
             "filetypes": ["vala", "genie"]
+        },
+        "rust": {
         }
     },
     "inlayHint.enable": false

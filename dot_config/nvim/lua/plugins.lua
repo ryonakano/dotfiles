@@ -19,6 +19,9 @@ Plug("nvim-lualine/lualine.nvim")
 Plug("nvim-treesitter/nvim-treesitter", { ["branch"] = "master", ["do"] = ":TSUpdate"})
 Plug("EdenEast/nightfox.nvim")
 Plug("lewis6991/gitsigns.nvim")
+
+-- plugins per language
+Plug("rust-lang/rust.vim")
 vim.call("plug#end")
 
 --------------------------------------------------------------------------------
