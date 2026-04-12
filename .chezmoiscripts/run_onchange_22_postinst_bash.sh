@@ -13,4 +13,5 @@ if [ $? -ne 0 ]; then
 fi
 
 # Install sheldon
-cargo binstall sheldon
+curl --proto '=https' -fLsS https://rossmacarthur.github.io/install/crate.sh \
+	| bash -s -- -f --repo rossmacarthur/sheldon --to ~/.local/bin
