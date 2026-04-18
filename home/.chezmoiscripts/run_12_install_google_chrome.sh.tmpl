@@ -22,7 +22,7 @@ install_with_dnf()
 
 install_with_apt()
 {
-	local -r LIBEXEC_DIR={{ joinPath .chezmoi.sourceDir "libexec" | quote }}
+	local -r LIBEXEC_DIR={{ joinPath .chezmoi.sourceDir "../libexec" | quote }}
 
 	local -r CHROME_KEY_URL=https://dl-ssl.google.com/linux/linux_signing_key.pub
 	local -r CHROME_KEY_FILE=google.gpg

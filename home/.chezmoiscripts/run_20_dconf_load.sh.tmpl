@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CONFIG_DIR_ROOT={{ joinPath .chezmoi.sourceDir "config" | quote }}
+CONFIG_DIR_ROOT={{ joinPath .chezmoi.sourceDir "../config" | quote }}
 CONFIG_DIR_DCONF="$CONFIG_DIR_ROOT/dconf"
 
 MACHINE="guest"
