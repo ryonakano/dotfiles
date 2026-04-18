@@ -8,13 +8,10 @@ fi
 # Common packages
 PKGS_DNF="
 	ibus-skk
-	neovim
 	tig
 	tmux
 	tree
 "
-# Development packages
-PKGS_DNF="$PKGS_DNF meson nodejs vala vala-language-server"
 
 if [[ "$HOSTNAME" =~ ^.*-host$ ]]; then
 	# Host tools

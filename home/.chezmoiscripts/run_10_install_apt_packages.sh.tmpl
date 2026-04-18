@@ -8,13 +8,10 @@ fi
 # Common packages
 PKGS_APT="
 	ibus-skk
-	snapd
 	tig
 	tmux
 	tree
 "
-# Development packages
-PKGS_APT="$PKGS_APT meson nodejs valac vala-language-server"
 
 if [[ "$HOSTNAME" =~ ^.*-host$ ]]; then
 	# Host tools
