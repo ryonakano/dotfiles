@@ -1,9 +1,6 @@
 #!/bin/bash
 
 CONFIG_HOME=${XDG_CONFIG_HOME:-$HOME/.config}
-DATA_HOME=${XDG_DATA_HOME:-$HOME/.local/share}
-
-# Install bashrc
 BASH_INIT="$CONFIG_HOME/bash/init.sh"
 
 # Install .bashrc only when it's not installed.
