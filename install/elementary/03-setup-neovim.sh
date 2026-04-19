@@ -13,7 +13,7 @@ PKGS="$PKGS gcc g++"
 #   set the `LIBCLANG_PATH` environment variable to a path where one of
 #   these files can be found (invalid: [])"
 # See https://github.com/DelSkayn/rquickjs/issues/589
-PKGS="$PKGS libclang-20-dev"
+PKGS="$PKGS libclang-dev"
 
 # Install VLS for LSP
 PKGS="$PKGS meson valac vala-language-server"
