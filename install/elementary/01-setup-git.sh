@@ -14,12 +14,12 @@ sudo apt install -y \
 
 # Install git-credential-libsecret
 # https://florianwinkelbauer.com/posts/2021-05-27-git-gnome-keyring/
-sudo make -C $(dirname $LIBSECRET_PATH)
-sudo mkdir -p $(dirname $LIBSECRET_LINK)
-sudo ln -svfT $LIBSECRET_PATH $LIBSECRET_LINK
+sudo make -C "$(dirname "$LIBSECRET_PATH")"
+sudo mkdir -p "$(dirname "$LIBSECRET_LINK")"
+sudo ln -svfT "$LIBSECRET_PATH" "$LIBSECRET_LINK"
 
 # Enable diff-highlight
-sudo chmod +x $DIFF_HIGHLIGHT_PATH
-if [ ! -e $DIFF_HIGHLIGHT_LINK ]; then
-	sudo ln -sf $DIFF_HIGHLIGHT_PATH $DIFF_HIGHLIGHT_LINK
+sudo chmod +x "$DIFF_HIGHLIGHT_PATH"
+if [ ! -e "$DIFF_HIGHLIGHT_LINK" ]; then
+	sudo ln -sf "$DIFF_HIGHLIGHT_PATH" "$DIFF_HIGHLIGHT_LINK"
 fi

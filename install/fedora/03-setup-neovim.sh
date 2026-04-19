@@ -17,4 +17,4 @@ PKGS="$PKGS clang-devel"
 # Install VLS for LSP
 PKGS="$PKGS meson vala vala-language-server"
 
-sudo dnf install -y $PKGS
+sudo dnf install -y "$PKGS"
