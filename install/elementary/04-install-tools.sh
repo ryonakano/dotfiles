@@ -4,4 +4,6 @@ sudo apt update
 sudo apt install -y \
 	tig \
 	tmux \
-	tree
+	tree \
+	flatpak \
+	ibus-skk

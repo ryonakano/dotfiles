@@ -3,4 +3,6 @@
 sudo dnf install -y \
 	tig \
 	tmux \
-	tree
+	tree \
+	flatpak \
+	ibus-skk
