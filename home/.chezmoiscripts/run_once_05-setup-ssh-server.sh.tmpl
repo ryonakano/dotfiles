@@ -1,0 +1,3 @@
+#!/bin/bash
+
+{{ include (printf "../install/%s/05-setup-ssh-server.sh" .chezmoi.osRelease.id) }}
