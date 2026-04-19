@@ -9,6 +9,9 @@ if [ $? -ne 0 ]; then
 	echo -e "\nsource $BASH_INIT" >> ~/.bashrc
 fi
 
-# Install sheldon
-curl --proto '=https' -fLsS https://rossmacarthur.github.io/install/crate.sh \
-	| bash -s -- -f --repo rossmacarthur/sheldon --to ~/.local/bin
+which sheldon > /dev/null
+if [ $? -ne 0 ]; then
+	# Install sheldon
+	curl --proto '=https' -fLsS https://rossmacarthur.github.io/install/crate.sh \
+		| bash -s -- -f --repo rossmacarthur/sheldon --to ~/.local/bin
+fi
