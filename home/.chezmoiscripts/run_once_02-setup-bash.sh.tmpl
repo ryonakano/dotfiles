@@ -1,3 +1,4 @@
 #!/bin/bash
 
+{{ include (printf "../install/%s/02-setup-bash.sh" .chezmoi.osRelease.id) }}
 {{ include "../install/02-setup-bash.sh" }}
