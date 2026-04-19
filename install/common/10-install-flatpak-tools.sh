@@ -5,12 +5,6 @@ if [[ ! "$HOSTNAME" =~ ^.*-host$ ]]; then
 	exit 0
 fi
 
-CONFIG_DIR_ROOT={{ joinPath .chezmoi.sourceDir "../config" | quote }}
-CONFIG_DIR_FLATPAK="$CONFIG_DIR_ROOT/flatpak"
-
-ARCH="{{ .chezmoi.arch }}"
-DISTRO_ID="{{ .chezmoi.osRelease.id }}"
-
 CONFIG_FILES="$CONFIG_DIR_FLATPAK/*-$DISTRO_ID-$ARCH.flatpakconf"
 
 for file in "$CONFIG_FILES"; do
