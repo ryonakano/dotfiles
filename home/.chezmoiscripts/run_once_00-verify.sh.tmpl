@@ -1,3 +1,5 @@
+#!/bin/bash
+
 {{ if ne .chezmoi.os "linux" -}}
 {{   fail (printf "Unsupported OS: %s" .chezmoi.os) }}
 {{ end -}}

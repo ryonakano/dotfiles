@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # I don't need any additional Flatpak apps on guest machines for now
 {{ if contains .chezmoi.hostname "-host" -}}
 {{   template "chezmoiscripts.d/10-install-flatpak-tools.sh.tmpl" . }}
