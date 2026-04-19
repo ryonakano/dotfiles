@@ -1,10 +1,5 @@
 #!/bin/bash
 
-if [[ ! "$HOSTNAME" =~ ^.*-host$ ]]; then
-	# I don't need any additional Flatpak apps on guest machines for now
-	exit 0
-fi
-
 CONFIG_FILES="$CONFIG_DIR_FLATPAK/*-$DISTRO_ID-$ARCH.flatpakconf"
 
 for file in "$CONFIG_FILES"; do

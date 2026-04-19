@@ -1,0 +1,12 @@
+{{ if eq .chezmoi.osRelease.id "elementary" -}}
+{{   include "../install/00-apt-utils.sh" }}
+{{ end -}}
+
+# I don't use web browsers on guest machines but use ones on host machines instead
+{{ if contains .chezmoi.hostname "-host" -}}
+     # Google Chrome is only available on amd64 platforms
+{{   if eq .chezmoi.arch "amd64" -}}
+{{     template "chezmoiscripts.d/10-install-flatpak-tools.sh.tmpl" . }}
+{{     include "../install/10-install-flatpak-tools.sh" }}
+{{   end -}}
+{{ end -}}
