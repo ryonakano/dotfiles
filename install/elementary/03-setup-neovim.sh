@@ -19,6 +19,6 @@ PKGS="$PKGS libclang-20-dev"
 PKGS="$PKGS meson valac vala-language-server"
 
 sudo apt update
-sudo apt install -y "$PKGS"
+sudo apt install -y $PKGS
 
 sudo snap install --classic nvim
