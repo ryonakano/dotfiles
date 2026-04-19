@@ -21,7 +21,7 @@ update:
 .PHONY: install_rust
 install_rust:
 	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-	. "$HOME/.cargo/env"
+	. "$(HOME)/.cargo/env"
 
 # Install chezmoi https://www.chezmoi.io/install/#one-line-package-install
 .PHONY: install_chezmoi

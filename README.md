@@ -9,6 +9,7 @@
 You'll need the following commands to install the dotfiles.
 
 - curl
+- gcc
 - git
 - make
 
