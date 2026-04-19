@@ -11,6 +11,11 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash
 # Download and install Node.js
 nvm install 24
 
+# Download and install cargo
+# See https://qiita.com/maguro_tuna/items/f69b2e41f753d2ff0cc2
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+. "$HOME/.cargo/env"
+
 # Install tree-sitter-cli that nvim-treesitter requires
 # See https://github.com/nvim-treesitter/nvim-treesitter/tree/main#requirements
 cargo install tree-sitter-cli
