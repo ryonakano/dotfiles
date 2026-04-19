@@ -22,17 +22,18 @@ import_apt_key() {
 	local uri=$4
 	local suite=$5
 	local components=$6
+	local tmpdir
 
 	# Get signature
-	local tmpdir=$(mktemp -d)
-	wget -q -O - "$key_url" | gpg --dearmor > $tmpdir/$key_file
-	sudo mkdir -p $APT_KEY_DIR
-	sudo mv $tmpdir/$key_file $APT_KEY_DIR
-	rmdir $tmpdir
+	tmpdir=$(mktemp -d)
+	wget -q -O - "$key_url" | gpg --dearmor > "$tmpdir/$key_file"
+	sudo mkdir -p "$APT_KEY_DIR"
+	sudo mv "$tmpdir/$key_file" "$APT_KEY_DIR"
+	rmdir "$tmpdir"
 
 	# Create source list
-	sudo mkdir -p $APT_SRC_DIR
-	echo "deb [signed-by=$APT_KEY_DIR/$key_file] $uri $suite $components" | sudo tee $APT_SRC_DIR/$list_file
+	sudo mkdir -p "$APT_SRC_DIR"
+	echo "deb [signed-by=$APT_KEY_DIR/$key_file] $uri $suite $components" | sudo tee "$APT_SRC_DIR/$list_file"
 
 	sudo apt update
 }

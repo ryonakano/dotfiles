@@ -1,0 +1,9 @@
+#!/bin/bash
+
+{{ if ne .chezmoi.os "linux" -}}
+{{   fail (printf "Unsupported OS: %s" .chezmoi.os) }}
+{{ end -}}
+
+{{ if not (eq .chezmoi.osRelease.id "elementary" "fedora") -}}
+{{   fail (printf "Unsupported Linux distribution: %s" .chezmoi.osRelease.id) }}
+{{ end -}}
