@@ -1,9 +1,12 @@
 #!/bin/bash
 
-sudo apt update
-sudo apt install -y \
+PKGS=" \
 	tig \
 	tmux \
 	tree \
 	flatpak \
-	ibus-skk
+	ibus-skk \
+"
+
+sudo apt update
+sudo apt install -y $PKGS

@@ -1,8 +1,11 @@
 #!/bin/bash
 
-sudo dnf install -y \
+PKGS=" \
 	tig \
 	tmux \
 	tree \
 	flatpak \
-	ibus-skk
+	ibus-skk \
+"
+
+sudo dnf install -y $PKGS
