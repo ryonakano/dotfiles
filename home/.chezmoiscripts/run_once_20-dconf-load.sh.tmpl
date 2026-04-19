@@ -13,6 +13,7 @@ DCONF_FILE="$CONFIG_DIR_DCONF/$DISTRO_ID-$MACHINE.ini"
 
 if [ ! -f "$DCONF_FILE" ]; then
 	echo -e "\033[0;33mW: DConf file \"$DCONF_FILE\" not found, skipping installation…\033[0;39m"
+	exit 0
 fi
 
 dconf load / < "$DCONF_FILE"
