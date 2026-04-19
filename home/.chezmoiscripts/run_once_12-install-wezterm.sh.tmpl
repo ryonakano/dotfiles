@@ -1,0 +1,7 @@
+#!/bin/bash
+
+{{ if eq .chezmoi.osRelease.id "elementary" -}}
+{{   include "../install/00-apt-utils.sh" }}
+{{ end -}}
+
+{{ include (printf "../install/%s/12-install-wezterm.sh" .chezmoi.osRelease.id) }}

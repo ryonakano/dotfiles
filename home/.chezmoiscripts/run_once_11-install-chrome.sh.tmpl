@@ -8,7 +8,6 @@
 {{ if contains .chezmoi.hostname "-host" -}}
      # Google Chrome is only available on amd64 platforms
 {{   if eq .chezmoi.arch "amd64" -}}
-{{     template "chezmoiscripts.d/10-install-flatpak-tools.sh.tmpl" . }}
-{{     include "../install/10-install-flatpak-tools.sh" }}
+{{     include (printf "../install/%s/11-install-chrome.sh" .chezmoi.osRelease.id) }}
 {{   end -}}
 {{ end -}}
