@@ -5,7 +5,7 @@
 {{ end -}}
 
 # I don't use web browsers on guest machines but use ones on host machines instead
-{{ if contains .chezmoi.hostname "-host" -}}
+{{ if contains "-host" .chezmoi.hostname -}}
      # Google Chrome is only available on amd64 platforms
 {{   if eq .chezmoi.arch "amd64" -}}
 {{     include (printf "../install/%s/11-install-chrome.sh" .chezmoi.osRelease.id) }}
