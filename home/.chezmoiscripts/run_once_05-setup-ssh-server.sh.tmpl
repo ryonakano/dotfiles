@@ -1,3 +1,6 @@
 #!/bin/bash
 
-{{ include (printf "../install/%s/05-setup-ssh-server.sh" .chezmoi.osRelease.id) }}
+# I don't need SSH servers on host because I use this just for file transfer between guest and host
+{{ if not (contains "-host" .chezmoi.hostname) -}}
+{{   include (printf "../install/%s/05-setup-ssh-server.sh" .chezmoi.osRelease.id) }}
+{{ end -}}
