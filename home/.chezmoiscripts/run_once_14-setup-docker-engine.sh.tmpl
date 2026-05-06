@@ -1,0 +1,4 @@
+#!/bin/bash
+
+{{ include (printf "../install/%s/14-setup-docker-engine.sh" .chezmoi.osRelease.id) }}
+{{ include "../install/14-setup-docker-engine.sh" }}
