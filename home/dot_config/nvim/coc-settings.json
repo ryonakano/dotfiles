@@ -1,9 +1,0 @@
-{
-    "languageserver": {
-        "vala": {
-            "command": "vala-language-server",
-            "filetypes": ["vala", "genie"]
-        }
-    },
-    "inlayHint.enable": false
-}
