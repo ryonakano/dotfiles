@@ -6,6 +6,7 @@ PKGS=" \
 	tree \
 	flatpak \
 	ibus-skk \
+	wl-clipboard \
 "
 
 sudo dnf install -y $PKGS
