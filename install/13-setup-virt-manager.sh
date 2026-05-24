@@ -11,7 +11,7 @@ sudo mkdir -p /usr/local/bin
 sudo tee /usr/local/bin/libvirt-docker-forward.sh > /dev/null << EOF
 #!/bin/bash
 # Wait for Docker to create DOCKER-USER chain
-#sleep 5
+sleep 5
 
 # Add rules if not already present
 iptables -C DOCKER-USER -i virbr0 -j ACCEPT 2>/dev/null || iptables -I DOCKER-USER 1 -i virbr0 -j ACCEPT
