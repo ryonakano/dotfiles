@@ -1,8 +1,11 @@
 *.swp
+*~
+*.un~
 *.o
 *.d
 !*.d/
 .flatpak-builder
 builddir-fpk
 flatpak-repo
+*.flatpak
 .wraplock
