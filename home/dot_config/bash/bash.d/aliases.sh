@@ -16,4 +16,5 @@ alias nview='nvim -R' # view in nvim
 alias lazyssh='ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null'
 alias lazyscp='scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null'
 
-alias fbld='flatpak-builder builddir-fpk --user --install --force-clean'
+alias fbuild='flatpak-builder --user --install --force-clean --repo=flatpak-repo builddir-fpk'
+alias fbundle='flatpak build-bundle --runtime-repo=https://flathub.org/repo/flathub.flatpakrepo flatpak-repo bundle.flatpak'

@@ -4,4 +4,5 @@
 !*.d/
 .flatpak-builder
 builddir-fpk
+flatpak-repo
 .wraplock
