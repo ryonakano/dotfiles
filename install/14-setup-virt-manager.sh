@@ -22,13 +22,12 @@ sudo chmod +x /usr/local/bin/libvirt-docker-forward.sh
 sudo tee /etc/systemd/system/libvirt-docker-forward.service > /dev/null << EOF
 [Unit]
 Description=Setup libvirt forwarding through Docker
-After=docker.service libvirtd.service
-Requires=docker.service libvirtd.service
+After=docker.service
+Requires=docker.service
 
 [Service]
-Type=oneshot
+Type=simple
 ExecStart=/usr/local/bin/libvirt-docker-forward.sh
-RemainAfterExit=yes
 
 [Install]
 WantedBy=multi-user.target
