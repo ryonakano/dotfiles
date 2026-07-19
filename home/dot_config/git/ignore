@@ -5,7 +5,7 @@
 *.d
 !*.d/
 .flatpak-builder
-builddir-fpk
+builddir*
 flatpak-repo
 *.flatpak
 .wraplock
