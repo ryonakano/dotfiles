@@ -2,6 +2,10 @@ alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias grep='grep --color=auto'
 alias grepn='grep -nrI'
+grepnless()
+{
+	grep --exclude-dir=.git --color=always -nrI "$@" | less -r
+}
 
 alias l='ls -CF'
 alias la='ls -AF'
