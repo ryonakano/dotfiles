@@ -3,7 +3,7 @@
 PKGS=" \
 	flatpak \
 	ibus-skk \
-	qemu-user-static \
+	(qemu-user-static|qemu-user-binfmt-hwe) \
 	tig \
 	tmux \
 	tree \
@@ -11,4 +11,4 @@ PKGS=" \
 "
 
 sudo apt update
-sudo apt install -y $PKGS
+sudo apt-get install -y $PKGS
