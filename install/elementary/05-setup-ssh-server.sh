@@ -1,7 +1,7 @@
 #!/bin/bash
 
-sudo apt update
-sudo apt install -y \
+sudo apt-get update
+sudo apt-get install -y \
 	openssh-server
 
 sudo systemctl restart ssh.service
