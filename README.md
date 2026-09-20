@@ -2,7 +2,7 @@
 [@ryonakano](https://github.com/ryonakano)'s dotfiles managed by [chezmoi](https://www.chezmoi.io/).
 
 ## Supported Distributions
-- Fedora 43
+- Fedora 44
 - elementary OS 8
 
 ## Usage
