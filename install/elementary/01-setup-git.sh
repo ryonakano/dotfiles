@@ -6,8 +6,8 @@ LIBSECRET_LINK=/usr/libexec/git-core/git-credential-libsecret
 DIFF_HIGHLIGHT_PATH=/usr/share/doc/git/contrib/diff-highlight/diff-highlight
 DIFF_HIGHLIGHT_LINK=/usr/local/bin/diff-highlight
 
-sudo apt update
-sudo apt install -y \
+sudo apt-get update
+sudo apt-get install -y \
 	make \
 	gcc \
 	libsecret-1-dev
