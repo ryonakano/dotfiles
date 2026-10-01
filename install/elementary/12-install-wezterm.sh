@@ -8,4 +8,4 @@ readonly WEZTERM_DEB_URL=https://apt.fury.io/wez/
 readonly WEZTERM_LIST_FILE=wezterm.list
 
 import_apt_key $WEZTERM_KEY_URL $WEZTERM_KEY_FILE $WEZTERM_LIST_FILE $WEZTERM_DEB_URL '*' '*'
-sudo apt install -y wezterm-nightly
+sudo apt-get install -y wezterm-nightly

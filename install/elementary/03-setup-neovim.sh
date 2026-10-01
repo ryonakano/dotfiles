@@ -18,7 +18,7 @@ PKGS="$PKGS libclang-dev"
 # Install VLS for LSP
 PKGS="$PKGS meson valac vala-language-server"
 
-sudo apt update
-sudo apt install -y $PKGS
+sudo apt-get update
+sudo apt-get install -y $PKGS
 
 sudo snap install --classic nvim

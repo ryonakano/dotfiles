@@ -35,5 +35,5 @@ import_apt_key() {
 	sudo mkdir -p "$APT_SRC_DIR"
 	echo "deb [signed-by=$APT_KEY_DIR/$key_file] $uri $suite $components" | sudo tee "$APT_SRC_DIR/$list_file"
 
-	sudo apt update
+	sudo apt-get update
 }
